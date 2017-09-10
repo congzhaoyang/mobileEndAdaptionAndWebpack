@@ -1,5 +1,18 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+//import px2rem from 'postcss-plugin-px2rem';
+const px2rem = require('postcss-plugin-px2rem')
+const px2remOpts = {
+  rootValue: 100,
+  unitPrecision: 5,
+  propWhiteList: [],
+  propBlackList: [],
+  selectorBlackList: [],
+  ignoreIdentifier: false,
+  replace: true,
+  mediaQuery: false,
+  minPixelValue: 0
+}; 
 
 
 module.exports = {
@@ -40,12 +53,16 @@ module.exports = {
                     modules: true
                   }
               }, {
-                loader: "postcss-loader"
-              }
-          ]
+                loader: "postcss-loader",
+                options: {
+                  postcss: [px2rem(px2remOpts)],
+                }
+              },
+          ],
         }
     ]
   },
+
   plugins: [
     new webpack.BannerPlugin('版权所有，翻版必究'),
     new HtmlWebpackPlugin({
