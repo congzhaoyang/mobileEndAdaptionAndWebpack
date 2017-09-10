@@ -21,6 +21,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
     "postcss-loader": "^2.0.6",
+    "px2rem-webpack-plugin": "^0.2.0-5",
     "react-transform-hmr": "^1.0.4",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.6",
