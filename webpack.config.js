@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-<<<<<<< HEAD
 //import px2rem from 'postcss-plugin-px2rem';
 const px2rem = require('postcss-plugin-px2rem')
 const px2remOpts = {
@@ -15,9 +14,6 @@ const px2remOpts = {
   minPixelValue: 0
 }; 
 
-=======
-const Px2remWebpackPlugin = require('px2rem-webpack-plugin');
->>>>>>> 0ef9b8c6a67e639d7ac0c0d7bdc3e46a643757e5
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -73,6 +69,5 @@ module.exports = {
       template: __dirname + "/app/index.tmpl.html"//new 一个这个插件的实例，并传入相关的参数
     }),
     new webpack.HotModuleReplacementPlugin(),//热加载插件
-    new Px2remWebpackPlugin({originScreenWidth: 750}),
   ]
 }
